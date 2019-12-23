@@ -1,4 +1,10 @@
 module Main where
 
 main :: IO ()
-main = putStrLn "Hello, Haskell!"
+main = do
+	pure $ foo ()
+	putStrLn "Hello, Haskell!"
+
+foo () = foo
+
+type Foo = () -> Foo
